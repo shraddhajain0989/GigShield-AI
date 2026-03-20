@@ -1,0 +1,54 @@
+{
+  "model_version": "v1.0.0-fraud-20260317",
+  "trained_at": "2026-03-17T00:54:03.401405",
+  "algorithms": [
+    "IsolationForest",
+    "LocalOutlierFactor"
+  ],
+  "ensemble_weights": {
+    "isolation_forest": 0.6,
+    "lof": 0.4
+  },
+  "n_samples": 15000,
+  "fraud_ratio": 0.08,
+  "n_features": 20,
+  "feature_names": [
+    "zone_distance_km",
+    "max_movement_speed_kmh",
+    "location_std_km",
+    "gps_accuracy_meters",
+    "unique_devices_30d",
+    "unique_ips_30d",
+    "total_claims_30d",
+    "total_policies_30d",
+    "policy_cancel_count_30d",
+    "avg_claim_interval_hours",
+    "claim_to_policy_ratio",
+    "account_age_days",
+    "previous_fraud_flags",
+    "deliveries_last_7d",
+    "avg_daily_active_hours",
+    "claim_hour",
+    "is_weekend_claim",
+    "claim_amount_zscore",
+    "claim_to_avg_ratio",
+    "rapid_policy_changes"
+  ],
+  "metrics": {
+    "isolation_forest": {
+      "precision": 0.918,
+      "recall": 0.9333,
+      "f1": 0.9256
+    },
+    "lof": {
+      "precision": 0.042,
+      "recall": 0.0417,
+      "f1": 0.0418
+    },
+    "ensemble": {
+      "precision": 0.7097,
+      "recall": 0.275,
+      "f1": 0.3964
+    }
+  }
+}

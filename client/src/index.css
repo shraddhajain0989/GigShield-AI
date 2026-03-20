@@ -1,0 +1,359 @@
+/* ============================================================================
+   GigShield AI — Design System
+   Premium dark theme with glassmorphism, vibrant accents, and smooth animations
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Color Palette ── */
+  --gs-bg-dark:        #0a0e17;
+  --gs-bg-card:        #111827;
+  --gs-bg-card-hover:  #1a2332;
+  --gs-bg-glass:       rgba(17, 24, 39, 0.7);
+  --gs-border:         rgba(255, 255, 255, 0.06);
+  --gs-border-hover:   rgba(255, 255, 255, 0.12);
+
+  --gs-text-primary:   #f1f5f9;
+  --gs-text-secondary: #94a3b8;
+  --gs-text-muted:     #64748b;
+
+  --gs-accent:         #6366f1;
+  --gs-accent-light:   #818cf8;
+  --gs-accent-glow:    rgba(99, 102, 241, 0.3);
+
+  --gs-success:        #10b981;
+  --gs-success-bg:     rgba(16, 185, 129, 0.1);
+  --gs-warning:        #f59e0b;
+  --gs-warning-bg:     rgba(245, 158, 11, 0.1);
+  --gs-danger:         #ef4444;
+  --gs-danger-bg:      rgba(239, 68, 68, 0.1);
+  --gs-info:           #06b6d4;
+  --gs-info-bg:        rgba(6, 182, 212, 0.1);
+
+  --gs-premium-gradient: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
+  --gs-success-gradient: linear-gradient(135deg, #10b981, #34d399);
+  --gs-danger-gradient:  linear-gradient(135deg, #ef4444, #f87171);
+  --gs-gold-gradient:    linear-gradient(135deg, #f59e0b, #fbbf24);
+
+  --gs-radius-sm:  8px;
+  --gs-radius-md:  12px;
+  --gs-radius-lg:  16px;
+  --gs-radius-xl:  24px;
+
+  --gs-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --gs-shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --gs-glow:   0 0 30px var(--gs-accent-glow);
+
+  --gs-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* ── Global ── */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--gs-bg-dark);
+  color: var(--gs-text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--gs-bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--gs-text-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gs-text-secondary); }
+
+/* ── Glass Card ── */
+.gs-card {
+  background: var(--gs-bg-card);
+  border: 1px solid var(--gs-border);
+  border-radius: var(--gs-radius-lg);
+  padding: 1.5rem;
+  transition: var(--gs-transition);
+}
+.gs-card:hover {
+  border-color: var(--gs-border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--gs-shadow);
+}
+.gs-card-glass {
+  background: var(--gs-bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--gs-border);
+  border-radius: var(--gs-radius-lg);
+  padding: 1.5rem;
+}
+
+/* ── KPI Stat Card ── */
+.gs-stat {
+  background: var(--gs-bg-card);
+  border: 1px solid var(--gs-border);
+  border-radius: var(--gs-radius-md);
+  padding: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+.gs-stat::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gs-premium-gradient);
+}
+.gs-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: var(--gs-premium-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gs-stat-label {
+  font-size: 0.8rem;
+  color: var(--gs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* ── Badges ── */
+.gs-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.gs-badge-success { background: var(--gs-success-bg); color: var(--gs-success); }
+.gs-badge-warning { background: var(--gs-warning-bg); color: var(--gs-warning); }
+.gs-badge-danger  { background: var(--gs-danger-bg);  color: var(--gs-danger);  }
+.gs-badge-info    { background: var(--gs-info-bg);    color: var(--gs-info);    }
+.gs-badge-accent  { background: rgba(99,102,241,0.15); color: var(--gs-accent-light); }
+
+/* ── Buttons ── */
+.gs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--gs-radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--gs-transition);
+}
+.gs-btn-primary {
+  background: var(--gs-premium-gradient);
+  color: white;
+  box-shadow: 0 4px 15px var(--gs-accent-glow);
+}
+.gs-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 25px var(--gs-accent-glow);
+}
+.gs-btn-outline {
+  background: transparent;
+  color: var(--gs-accent-light);
+  border: 1px solid var(--gs-accent);
+}
+.gs-btn-outline:hover {
+  background: rgba(99,102,241,0.1);
+}
+.gs-btn-success {
+  background: var(--gs-success-gradient);
+  color: white;
+}
+.gs-btn-danger {
+  background: var(--gs-danger-gradient);
+  color: white;
+}
+
+/* ── Layout ── */
+.gs-page {
+  padding: 1.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gs-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.gs-page-subtitle {
+  color: var(--gs-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Sidebar ── */
+.gs-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background: var(--gs-bg-card);
+  border-right: 1px solid var(--gs-border);
+  padding: 1.5rem 1rem;
+  position: fixed;
+  left: 0; top: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+.gs-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+.gs-sidebar-brand h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: var(--gs-premium-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gs-sidebar-nav { list-style: none; flex: 1; }
+.gs-sidebar-nav li { margin-bottom: 4px; }
+.gs-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--gs-radius-sm);
+  color: var(--gs-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--gs-transition);
+}
+.gs-sidebar-link:hover {
+  color: var(--gs-text-primary);
+  background: rgba(255,255,255,0.05);
+}
+.gs-sidebar-link.active {
+  color: var(--gs-accent-light);
+  background: rgba(99,102,241,0.1);
+  font-weight: 600;
+}
+.gs-main-content {
+  margin-left: 260px;
+  min-height: 100vh;
+}
+
+/* ── Tables ── */
+.gs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.gs-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gs-text-muted);
+  border-bottom: 1px solid var(--gs-border);
+}
+.gs-table td {
+  padding: 14px 16px;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--gs-border);
+}
+.gs-table tr:hover td {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ── Pulse animation for live indicators ── */
+@keyframes gs-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.gs-pulse {
+  animation: gs-pulse 2s infinite;
+}
+
+/* ── Fade-in animation ── */
+@keyframes gs-fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.gs-fade-in {
+  animation: gs-fadeIn 0.4s ease-out forwards;
+}
+
+/* ── Auth page ── */
+.gs-auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.06) 0%, transparent 50%),
+    var(--gs-bg-dark);
+}
+.gs-auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+  background: var(--gs-bg-card);
+  border: 1px solid var(--gs-border);
+  border-radius: var(--gs-radius-xl);
+  box-shadow: var(--gs-shadow-lg);
+}
+.gs-auth-card h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.gs-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--gs-border);
+  border-radius: var(--gs-radius-sm);
+  color: var(--gs-text-primary);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  transition: var(--gs-transition);
+}
+.gs-input:focus {
+  outline: none;
+  border-color: var(--gs-accent);
+  box-shadow: 0 0 0 3px var(--gs-accent-glow);
+}
+.gs-input::placeholder { color: var(--gs-text-muted); }
+.gs-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gs-text-secondary);
+  margin-bottom: 6px;
+}
+
+/* ── Leaflet map override ── */
+.leaflet-container {
+  border-radius: var(--gs-radius-lg);
+  z-index: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .gs-sidebar { display: none; }
+  .gs-main-content { margin-left: 0; }
+  .gs-page { padding: 1rem; }
+  .gs-stat-value { font-size: 1.5rem; }
+}

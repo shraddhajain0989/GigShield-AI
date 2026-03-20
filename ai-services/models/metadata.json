@@ -1,0 +1,63 @@
+{
+  "model_version": "v1.0.0-rf-20260317",
+  "trained_at": "2026-03-17T00:47:57.671265",
+  "algorithm": "RandomForestRegressor",
+  "n_estimators": 200,
+  "max_depth": 20,
+  "n_samples": 10000,
+  "n_features": 17,
+  "feature_names": [
+    "zone_latitude",
+    "zone_longitude",
+    "zone_risk_score",
+    "risk_tier_encoded",
+    "avg_rainfall_mm",
+    "max_rainfall_mm",
+    "flood_risk_score",
+    "avg_aqi",
+    "max_aqi",
+    "avg_temperature",
+    "traffic_congestion_index",
+    "delivery_density",
+    "coverage_tier_encoded",
+    "disruption_type_encoded",
+    "worker_tenure_weeks",
+    "claim_history_ratio",
+    "worker_fraud_score"
+  ],
+  "feature_importance": {
+    "coverage_tier_encoded": 0.648269,
+    "disruption_type_encoded": 0.091243,
+    "zone_risk_score": 0.06867,
+    "flood_risk_score": 0.038484,
+    "risk_tier_encoded": 0.03254,
+    "zone_latitude": 0.016038,
+    "avg_rainfall_mm": 0.014894,
+    "max_rainfall_mm": 0.013287,
+    "avg_aqi": 0.012963,
+    "zone_longitude": 0.010543,
+    "max_aqi": 0.010067,
+    "traffic_congestion_index": 0.009721,
+    "worker_fraud_score": 0.008767,
+    "avg_temperature": 0.006914,
+    "delivery_density": 0.006761,
+    "claim_history_ratio": 0.006161,
+    "worker_tenure_weeks": 0.004679
+  },
+  "metrics": {
+    "train_mae": 2.4437,
+    "test_mae": 4.2751,
+    "train_rmse": 3.0772,
+    "test_rmse": 5.31,
+    "train_r2": 0.9873,
+    "test_r2": 0.9638,
+    "test_median_ae": 3.706,
+    "oob_score": 0.9611,
+    "cv_mae_mean": 4.4724,
+    "cv_mae_std": 0.0973
+  },
+  "premium_range": {
+    "min": 30.0,
+    "max": 120.0
+  }
+}

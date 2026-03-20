@@ -1,0 +1,38 @@
+# ── Dependencies ──
+node_modules/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ── Build ──
+dist/
+build/
+*.egg-info/
+
+# ── Environment ──
+.env
+.env.local
+.env.production
+
+# ── Models (regenerated at build time) ──
+*.pkl
+*.joblib
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+
+# ── Logs ──
+*.log
+logs/
+
+# ── Coverage ──
+coverage/
+.nyc_output/
