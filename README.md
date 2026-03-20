@@ -74,23 +74,6 @@ docker compose up --build -d
 
 ---
 
-## 🖼️ Visual Experience
-
-````carousel
-![Worker Razorpay Live Checkout](./assets/razorpay_checkout.png)
-<!-- slide -->
-![Admin System Analytics Dashboard](./assets/admin_dashboard.png)
-<!-- slide -->
-![Admin Risk Heatmap](./assets/risk_heatmap.png)
-<!-- slide -->
-![Admin Fraud Alerts](./assets/fraud_alerts.png)
-````
-
-### 🎬 Demo Walkthrough
-![Hackathon End-to-End Demo](./assets/demo_video.webp)
-
----
-
 ## 🎬 Live Demonstration
 To test the "Parametric Trigger" logic immediately:
 1. Log in as **Admin**.
